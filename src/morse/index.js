@@ -56,8 +56,44 @@ const MORSE_CODE = {
   "...---...": "SOS",
 };
 
+
+
 Object.freeze(MORSE_CODE);
 
-function morse(text) {}
 
+
+function morse(text) {
+ let spaceLetter= text.split("   ")
+ 
+
+ let words= spaceLetter.map(elem=>elem.split(" "))
+ console.log(words)
+
+ let decodeCode=[];
+  for (let i = 0; i < words.length; i++) {
+    decodeCode[i]=[]
+
+    
+    for (let j = 0; j < words[i].length; j++) {
+      if(MORSE_CODE[words][i][j]){
+        decoded[i].push( MORSE_CODE[words[i][x]] );
+      }
+      
+    }
+   console.log(decodeCode) 
+  }
+ decodeCode.map(arr=>arr.join("")).join(" ")
+
+}
+morse("------....")
 module.exports = morse;
+
+
+
+// let symbolCode=text;
+// let spaceLetter=symbolCode.split('   ')
+// // get word code, 3 spaces apart
+// let spaceLetterOne=spaceLetter.map(word => word.split(' ')) // get character code, 1 spaces apart
+//              spaceLetterOne.map(character => MORSE_CODE[character]).join('') // join characters to word
+
+//    return spaceLetterOne
